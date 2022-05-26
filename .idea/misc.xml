@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/WORK/ANDROID STUDIO PROJECTS/OrangeScore/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.179" />
+        <entry key="..\:/WORK/ANDROID STUDIO PROJECTS/OrangeScore/app/src/main/res/drawable/button_bg.xml" value="0.1" />
+        <entry key="..\:/WORK/ANDROID STUDIO PROJECTS/OrangeScore/app/src/main/res/drawable/edit_text_bg.xml" value="0.1" />
+        <entry key="..\:/WORK/ANDROID STUDIO PROJECTS/OrangeScore/app/src/main/res/drawable/ic_launcher_background.xml" value="0.179" />
+        <entry key="..\:/WORK/ANDROID STUDIO PROJECTS/OrangeScore/app/src/main/res/drawable/view_bg.xml" value="0.1" />
+        <entry key="..\:/WORK/ANDROID STUDIO PROJECTS/OrangeScore/app/src/main/res/layout/activity_add_teams.xml" value="0.3859375" />
+        <entry key="..\:/WORK/ANDROID STUDIO PROJECTS/OrangeScore/app/src/main/res/layout/activity_admin.xml" value="0.1591688089117395" />
+        <entry key="..\:/WORK/ANDROID STUDIO PROJECTS/OrangeScore/app/src/main/res/layout/activity_league_start.xml" value="0.17592592592592593" />
+        <entry key="..\:/WORK/ANDROID STUDIO PROJECTS/OrangeScore/app/src/main/res/layout/activity_login.xml" value="0.25" />
+        <entry key="..\:/WORK/ANDROID STUDIO PROJECTS/OrangeScore/app/src/main/res/layout/activity_main.xml" value="0.38697916666666665" />
+        <entry key="..\:/WORK/ANDROID STUDIO PROJECTS/OrangeScore/app/src/main/res/layout/activity_players.xml" value="0.18819655521783182" />
+        <entry key="..\:/WORK/ANDROID STUDIO PROJECTS/OrangeScore/app/src/main/res/layout/activity_r1.xml" value="0.18819655521783182" />
+        <entry key="..\:/WORK/ANDROID STUDIO PROJECTS/OrangeScore/app/src/main/res/layout/activity_r3.xml" value="0.24547101449275363" />
+        <entry key="..\:/WORK/ANDROID STUDIO PROJECTS/OrangeScore/app/src/main/res/layout/activity_r4.xml" value="0.24682971014492755" />
+        <entry key="..\:/WORK/ANDROID STUDIO PROJECTS/OrangeScore/app/src/main/res/layout/activity_testadmin.xml" value="0.38697916666666665" />
+        <entry key="..\:/WORK/ANDROID STUDIO PROJECTS/OrangeScore/app/src/main/res/layout/content_testadmin.xml" value="0.38697916666666665" />
+        <entry key="..\:/WORK/ANDROID STUDIO PROJECTS/OrangeScore/app/src/main/res/layout/fragment_dashboard.xml" value="0.38697916666666665" />
+        <entry key="..\:/WORK/ANDROID STUDIO PROJECTS/OrangeScore/app/src/main/res/layout/fragment_first.xml" value="0.19022289766970618" />
+        <entry key="..\:/WORK/ANDROID STUDIO PROJECTS/OrangeScore/app/src/main/res/layout/fragment_home.xml" value="0.3729166666666667" />
+        <entry key="..\:/WORK/ANDROID STUDIO PROJECTS/OrangeScore/app/src/main/res/layout/fragment_notifications.xml" value="0.38697916666666665" />
+        <entry key="..\:/WORK/ANDROID STUDIO PROJECTS/OrangeScore/app/src/main/res/layout/fragment_second.xml" value="0.19022289766970618" />
+        <entry key="..\:/WORK/ANDROID STUDIO PROJECTS/OrangeScore/app/src/main/res/layout/log_in_fragment.xml" value="0.22" />
+        <entry key="..\:/WORK/ANDROID STUDIO PROJECTS/OrangeScore/app/src/main/res/layout/r1_activity.xml" value="0.38697916666666665" />
+        <entry key="..\:/WORK/ANDROID STUDIO PROJECTS/OrangeScore/app/src/main/res/layout/r1_fragment_first.xml" value="0.24682971014492755" />
+        <entry key="..\:/WORK/ANDROID STUDIO PROJECTS/OrangeScore/app/src/main/res/layout/r1_fragment_second.xml" value="0.38697916666666665" />
+        <entry key="..\:/WORK/ANDROID STUDIO PROJECTS/OrangeScore/app/src/main/res/layout/sign_up_fragment.xml" value="0.22" />
+        <entry key="..\:/WORK/ANDROID STUDIO PROJECTS/OrangeScore/app/src/main/res/menu/bottom_nav_menu.xml" value="0.38697916666666665" />
+        <entry key="..\:/WORK/ANDROID STUDIO PROJECTS/OrangeScore/app/src/main/res/menu/menu.xml" value="0.38645833333333335" />
+        <entry key="..\:/WORK/ANDROID STUDIO PROJECTS/OrangeScore/app/src/main/res/mipmap-anydpi-v26/app_icon.xml" value="0.1" />
+        <entry key="..\:/WORK/ANDROID STUDIO PROJECTS/OrangeScore/app/src/main/res/mipmap-anydpi-v26/app_icon_final.xml" value="0.1" />
+        <entry key="..\:/WORK/ANDROID STUDIO PROJECTS/OrangeScore/app/src/main/res/mipmap-anydpi-v26/app_icon_round.xml" value="0.1175" />
+        <entry key="..\:/WORK/ANDROID STUDIO PROJECTS/OrangeScore/app/src/main/res/mipmap-anydpi-v26/application_icon.xml" value="0.2095" />
+        <entry key="app/src/main/res/layout/activity_league_start.xml" value="0.2504528985507246" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

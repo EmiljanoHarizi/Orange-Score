@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">Orange Score</string>
+    <string name="title_activity_r1">R1</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="title_activity_main2">MainActivity2</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="title_activity_testadmin">testadmin</string>
+    <string-array name="home_team_names">
+        <item>Alan</item>
+        <item>Tim</item>
+        <item>Donald</item>
+        <item>Sergey</item>
+        <item>Grace</item>
+        <item>Ada</item>
+    </string-array>
+    <string-array name="away_team_names">
+        <item>Turing</item>
+        <item>Berners-Lee</item>
+        <item>Knuth</item>
+        <item>Brin</item>
+        <item>Hopper</item>
+        <item>Lovelace</item>
+    </string-array>
+</resources>

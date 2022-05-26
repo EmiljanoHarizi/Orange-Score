@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1084268393239",
+    "firebase_url": "https://orange-score-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "orange-score",
+    "storage_bucket": "orange-score.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1084268393239:android:839ed1149945d1f7683d52",
+        "android_client_info": {
+          "package_name": "com.example.orangescore"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1084268393239-ovekgjtkkv0ujpjoe3smk7e8ldobf4ft.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCti8qS302e5fg5fogtgeGiSBzmWU3tcug"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1084268393239-ovekgjtkkv0ujpjoe3smk7e8ldobf4ft.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

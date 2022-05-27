@@ -71,7 +71,7 @@ public class LoginTabFragment extends Fragment {
                     }).addOnFailureListener(new OnFailureListener() {
                         @Override
                         public void onFailure(@NonNull Exception e) {
-
+                            Toast.makeText(getActivity(), "Wrong email or password", Toast.LENGTH_SHORT).show();
                         }
                     });
                 }

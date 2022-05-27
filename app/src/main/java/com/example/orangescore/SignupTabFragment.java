@@ -28,8 +28,8 @@ public class SignupTabFragment extends Fragment {
     EditText email, name, surname, password;
     Button sign_up;
     boolean valid = true;
-    FirebaseAuth fAuth;
-    FirebaseFirestore fStore;
+    private FirebaseAuth fAuth;
+    private FirebaseFirestore fStore;
 
    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -37,7 +37,7 @@ public class SignupTabFragment extends Fragment {
         
         fAuth = FirebaseAuth.getInstance();
         fStore = FirebaseFirestore.getInstance();
-        
+
        email = root.findViewById(R.id.email_sign);
        name = root.findViewById(R.id.name);
        surname = root.findViewById(R.id.surname);

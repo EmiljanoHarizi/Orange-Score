@@ -28,8 +28,8 @@ public class LoginTabFragment extends Fragment {
     float v=0;
     boolean valid = true;
 
-    FirebaseAuth fAuth;
-    FirebaseFirestore fStore;
+    private FirebaseAuth fAuth;
+    private FirebaseFirestore fStore;
 
 
     @Override

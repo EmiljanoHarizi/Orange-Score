@@ -1,6 +1,5 @@
 package com.example.orangescore;
 
-import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -30,8 +29,6 @@ public class LeagueStartActivity extends AppCompatActivity {
     Button make_match;
     ImageView home_picture, away_picture;
 
-    Bitmap homeBitmap, awayBitmap;
-
     ArrayList<String> homeList;
     ArrayList<String> awayList;
 
@@ -41,7 +38,7 @@ public class LeagueStartActivity extends AppCompatActivity {
     QuerySnapshot queryHome;
     QuerySnapshot queryAway;
 
-    FirebaseFirestore DB = FirebaseFirestore.getInstance();
+    private FirebaseFirestore DB = FirebaseFirestore.getInstance();
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {

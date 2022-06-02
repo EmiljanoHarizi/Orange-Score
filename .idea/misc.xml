@@ -35,8 +35,11 @@
         <entry key="..\:/WORK/ANDROID STUDIO PROJECTS/OrangeScore/app/src/main/res/mipmap-anydpi-v26/app_icon_final.xml" value="0.1" />
         <entry key="..\:/WORK/ANDROID STUDIO PROJECTS/OrangeScore/app/src/main/res/mipmap-anydpi-v26/app_icon_round.xml" value="0.1175" />
         <entry key="..\:/WORK/ANDROID STUDIO PROJECTS/OrangeScore/app/src/main/res/mipmap-anydpi-v26/application_icon.xml" value="0.2095" />
+        <entry key="app/src/main/res/layout/activity_admin.xml" value="0.15070921985815602" />
         <entry key="app/src/main/res/layout/activity_league_start.xml" value="0.2504528985507246" />
         <entry key="app/src/main/res/layout/activity_r4.xml" value="0.2504528985507246" />
+        <entry key="app/src/main/res/layout/recyclerview_item.xml" value="0.2504528985507246" />
+        <entry key="app/src/main/res/layout/recyclerview_row_matches.xml" value="0.1" />
       </map>
     </option>
   </component>

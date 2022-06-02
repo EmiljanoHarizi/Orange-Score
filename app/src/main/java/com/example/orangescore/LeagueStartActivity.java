@@ -1,5 +1,6 @@
 package com.example.orangescore;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -43,6 +44,11 @@ public class LeagueStartActivity extends AppCompatActivity {
 
     private FirebaseFirestore DB = FirebaseFirestore.getInstance();
 
+    public void onBackPressed() {
+        super.onBackPressed();
+        startActivity(new Intent(LeagueStartActivity.this, R1adminActivity.class));
+        finish();
+    }
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -97,6 +103,7 @@ public class LeagueStartActivity extends AppCompatActivity {
         getDataAway();
     }
 
+    /** Gets team data and creates a list of the teams in the league to pick as a home team*/
     private void getDataHome() {
         DB.collection("teams").get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
             @Override
@@ -120,6 +127,7 @@ public class LeagueStartActivity extends AppCompatActivity {
         });
     }
 
+    /** Gets team data and creates a list of the teams in the league to pick as an away team*/
     private void getDataAway() {
         DB.collection("teams").get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
             @Override
@@ -143,10 +151,13 @@ public class LeagueStartActivity extends AppCompatActivity {
         });
     }
 
+    /** Adds match data to our database*/
     public void CreateMatch(View view) {
+
         String selected_team_home = home_pick.getSelectedItem().toString();
         String selected_team_away = away_pick.getSelectedItem().toString();
         String match_date = edit_date.getText().toString();
+
 
         Match newMatch = new Match(selected_team_home, selected_team_away, match_date);
 

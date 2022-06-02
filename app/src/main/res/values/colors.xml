@@ -7,4 +7,16 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <color name="app_icon_background">#D0997C</color>
+    <color name="app_icon_final_background">#CF997C</color>
+
+    <!-- Frutico 2 Color Palette -->
+    <color name="ocean_blue">#597F8E</color>
+    <color name="nardo_grey">#92A2B2</color>
+    <color name="salmon_pink">#E7A4A8</color>
+    <color name="deep_wine">#5C0C08</color>
+    <color name="orange">#CE6232</color>
+
+
 </resources>

@@ -1,10 +1,7 @@
 package com.example.orangescore;
 
-public class Match {
-    private String homeTeam;
-    private String awayTeam;
-    private String matchDate;
-
+ public class Match {
+     String homeTeam, awayTeam, matchDate;
 
     public Match() {
     }
@@ -15,6 +12,7 @@ public class Match {
         this.matchDate = matchDate;
     }
 
+    /** Getter & Setter for the name of home team*/
     public String getHomeTeam() {
         return homeTeam;
     }
@@ -23,6 +21,7 @@ public class Match {
         this.homeTeam = homeTeam;
     }
 
+    /** Getter & Setter for the name of away team*/
     public String getAwayTeam() {
         return awayTeam;
     }
@@ -31,6 +30,7 @@ public class Match {
         this.awayTeam = awayTeam;
     }
 
+    /** Getter & Setter for the match date*/
     public String getMatchDate() {
         return matchDate;
     }
@@ -38,4 +38,5 @@ public class Match {
     public void setMatchDate(String matchDate) {
         this.matchDate = matchDate;
     }
+
 }

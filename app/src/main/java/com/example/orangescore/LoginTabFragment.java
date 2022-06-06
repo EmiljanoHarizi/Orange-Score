@@ -94,12 +94,12 @@ public class LoginTabFragment extends Fragment {
                 /** Ελέγχω το access level το χρήστη */
                 if(documentSnapshot.getString("isAdmin") != null) {
                     /** Όταν ο χρήστης είναι admin */
-                    getActivity().startActivity(new Intent(getActivity().getApplicationContext(), R1adminActivity.class));
+                    getActivity().startActivity(new Intent(getActivity().getApplicationContext(), Admin_Start_Activity.class));
                     getActivity().finish();
                 }
                 if(documentSnapshot.getString("isUser") != null) {
                     /** Όταν είναι απλός χρήστης */
-                    getActivity().startActivity(new Intent(getActivity().getApplicationContext(), R4.class));
+                    getActivity().startActivity(new Intent(getActivity().getApplicationContext(), R4_Activity.class));
                     getActivity().finish();
                 }
 

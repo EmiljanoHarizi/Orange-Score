@@ -3,6 +3,7 @@
     package="com.example.orangescore">
 
     <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/app_icon"
@@ -10,9 +11,12 @@
         android:roundIcon="@mipmap/app_icon_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.OrangeScore">
+        <activity
+            android:name=".R1_Activity"
+            android:exported="false" />
         <activity android:name=".LeagueStartActivity" />
-        <activity android:name=".R4" />
-        <activity android:name=".R1adminActivity" />
+        <activity android:name=".R4_Activity" />
+        <activity android:name=".Admin_Start_Activity" />
         <activity
             android:name=".MainActivity"
             android:exported="true">

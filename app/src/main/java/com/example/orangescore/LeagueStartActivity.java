@@ -46,7 +46,7 @@ public class LeagueStartActivity extends AppCompatActivity {
 
     public void onBackPressed() {
         super.onBackPressed();
-        startActivity(new Intent(LeagueStartActivity.this, R1adminActivity.class));
+        startActivity(new Intent(LeagueStartActivity.this, Admin_Start_Activity.class));
         finish();
     }
     @Override

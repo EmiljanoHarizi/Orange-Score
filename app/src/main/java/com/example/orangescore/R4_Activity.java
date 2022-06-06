@@ -9,7 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
 
-public class R4 extends AppCompatActivity {
+public class R4_Activity extends AppCompatActivity {
     Button logout_button;
 
     @Override

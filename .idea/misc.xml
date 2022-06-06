@@ -3,6 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/WORK/ANDROID STUDIO PROJECTS/Orange Score/app/src/main/res/layout/activity_admin.xml" value="0.25" />
+        <entry key="..\:/WORK/ANDROID STUDIO PROJECTS/Orange Score/app/src/main/res/layout/activity_r1.xml" value="0.26992753623188404" />
+        <entry key="..\:/WORK/ANDROID STUDIO PROJECTS/Orange Score/app/src/main/res/layout/recview.xml" value="0.289453125" />
+        <entry key="..\:/WORK/ANDROID STUDIO PROJECTS/Orange Score/app/src/main/res/layout/recyclerview_row_matches.xml" value="0.25" />
+        <entry key="..\:/WORK/ANDROID STUDIO PROJECTS/Orange Score/app/src/main/res/layout/recyclerview_row_players.xml" value="0.26992753623188404" />
         <entry key="..\:/WORK/ANDROID STUDIO PROJECTS/OrangeScore/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.179" />
         <entry key="..\:/WORK/ANDROID STUDIO PROJECTS/OrangeScore/app/src/main/res/drawable/button_bg.xml" value="0.1" />
         <entry key="..\:/WORK/ANDROID STUDIO PROJECTS/OrangeScore/app/src/main/res/drawable/edit_text_bg.xml" value="0.1" />

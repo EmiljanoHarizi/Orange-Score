@@ -1,6 +1,7 @@
 package com.example.orangescore;
 
 import android.content.Context;
+import android.telecom.Call;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,10 +15,12 @@ import java.util.ArrayList;
 public class MatchRecyclerViewAdapter extends RecyclerView.Adapter<MatchRecyclerViewAdapter.MyViewHolder> {
     Context context;
     ArrayList<Match> list_of_matches;
+    private ItemClickListener mItemListener;
 
-    public MatchRecyclerViewAdapter(Context context, ArrayList<Match> list_of_matches) {
+    public MatchRecyclerViewAdapter(Context context, ArrayList<Match> list_of_matches, ItemClickListener mItemListener) {
         this.context = context;
         this.list_of_matches = list_of_matches;
+        this.mItemListener = mItemListener;
     }
 
     @NonNull
@@ -34,6 +37,10 @@ public class MatchRecyclerViewAdapter extends RecyclerView.Adapter<MatchRecycler
         holder.team_away_rec.setText(match.awayTeam);
         holder.match_date_rec.setText(match.matchDate);
 
+        holder.itemView.setOnClickListener(view -> {
+            mItemListener.onItemClick(list_of_matches.get(position));
+        });
+
     }
 
     @Override
@@ -41,14 +48,18 @@ public class MatchRecyclerViewAdapter extends RecyclerView.Adapter<MatchRecycler
         return list_of_matches.size();
     }
 
+    public interface ItemClickListener{
+        void onItemClick(Match details);
+    }
+
     public static class MyViewHolder extends  RecyclerView.ViewHolder {
         TextView team_home_rec, team_away_rec, match_date_rec;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
-            team_home_rec = itemView.findViewById(R.id.recycler_row_team_home);
-            team_away_rec = itemView.findViewById(R.id.recycler_row_team_away);
-            match_date_rec = itemView.findViewById(R.id.recycler_row_date);
+            team_home_rec = itemView.findViewById(R.id.homeTeam_Recycler);
+            team_away_rec = itemView.findViewById(R.id.awayTeam_Recycler);
+            match_date_rec = itemView.findViewById(R.id.matchDate_Recycler);
 
         }
     }

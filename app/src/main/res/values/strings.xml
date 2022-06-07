@@ -12,6 +12,37 @@
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
     <string name="title_activity_testadmin">testadmin</string>
+    <string name="homeView">Home</string>
+    <string name="visitorView">Visitor</string>
+    <string name="score1">0</string>
+    <string name="score2">0</string>
+    <string name="period1">1</string>
+    <string name="period2">2</string>
+    <string name="period3">3</string>
+    <string name="period4">4</string>
+    <string name="period">Period</string>
+    <string name="team1players">Home Starting 5</string>
+    <string name="team2players">Visitor Starting 5</string>
+    <string name="sc1">FT Made</string>
+    <string name="sc2">3PT Made</string>
+    <string name="sc3">2PT Made</string>
+    <string name="jumpball">Jump Ball</string>
+    <string name="foul">Foul</string>
+    <string name="reb">Rebound</string>
+    <string name="steal">Steal</string>
+    <string name="turnover">Turnover</string>
+    <string name="assi">Assist</string>
+    <string name="block">Block</string>
+    <string name="def">Deflect</string>
+    <string name="hR">Home Roster</string>
+    <string name="vR">Visitor Roster</string>
+    <string name="fouls">Fouls</string>
+    <string name="foulcounter1">0</string>
+    <string name="foulcounter2">0</string>
+
+
+
+
     <string-array name="home_team_names">
         <item>Alan</item>
         <item>Tim</item>

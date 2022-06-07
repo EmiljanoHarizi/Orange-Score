@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.OrangeScore">
         <activity
+            android:name=".R2_Activity"
+            android:exported="false" />
+        <activity
             android:name=".R1_Activity"
             android:exported="false" />
         <activity android:name=".LeagueStartActivity" />

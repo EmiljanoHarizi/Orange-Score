@@ -25,6 +25,12 @@ public class R1_Activity extends AppCompatActivity {
     TeamAwayRecyclerViewAdapter away_Adapter;
     FirebaseFirestore DB;
 
+    public void onBackPressed() {
+        super.onBackPressed();
+        startActivity(new Intent(R1_Activity.this, Admin_Start_Activity.class));
+        finish();
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,27 +62,11 @@ public class R1_Activity extends AppCompatActivity {
         EventChangeListenerAway();
     }
 
-    private void EventChangeListenerAway() {
-        DB.collection("players").orderBy("player_name", Query.Direction.ASCENDING).whereEqualTo("player_team", "Olympiacos B.C.").addSnapshotListener(new EventListener<QuerySnapshot>() {
-            @Override
-            public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
-                if (error != null) {
-                    Log.e("Firestore error", error.getMessage());
-                    return;
-                }
-                for (DocumentChange homedc: value.getDocumentChanges()) {
-                    if (homedc. getType() == DocumentChange.Type.ADDED) {
-                        awayPlayers_List.add(homedc.getDocument().toObject(Player.class));
-                    }
-                    away_Adapter.notifyDataSetChanged();
-                }
-            }
-
-        });
-    }
-
     private void EventChangeListenerHome() {
-        DB.collection("players").orderBy("player_name", Query.Direction.ASCENDING).whereEqualTo("player_team", "AEK B.C.").addSnapshotListener(new EventListener<QuerySnapshot>() {
+        Bundle bundle = getIntent().getExtras();
+        String homePlayers = bundle.getString("pass_home_team_name");
+
+        DB.collection("players").whereEqualTo("player_team", homePlayers).orderBy("player_name", Query.Direction.ASCENDING).addSnapshotListener(new EventListener<QuerySnapshot>() {
             @Override
             public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
                 if (error != null) {
@@ -93,5 +83,26 @@ public class R1_Activity extends AppCompatActivity {
         });
     }
 
+    private void EventChangeListenerAway() {
+        Bundle bundle = getIntent().getExtras();
+        String awayPlayers = bundle.getString("pass_away_team_name");
+
+        DB.collection("players").whereEqualTo("player_team", awayPlayers).orderBy("player_name", Query.Direction.ASCENDING).addSnapshotListener(new EventListener<QuerySnapshot>() {
+            @Override
+            public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
+                if (error != null) {
+                    Log.e("Firestore error", error.getMessage());
+                    return;
+                }
+                for (DocumentChange awaydc: value.getDocumentChanges()) {
+                    if (awaydc. getType() == DocumentChange.Type.ADDED) {
+                        awayPlayers_List.add(awaydc.getDocument().toObject(Player.class));
+                    }
+                    away_Adapter.notifyDataSetChanged();
+                }
+            }
+
+        });
+    }
 
 }

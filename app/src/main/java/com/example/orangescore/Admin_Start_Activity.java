@@ -53,6 +53,19 @@ public class Admin_Start_Activity extends AppCompatActivity {
         match_Adapter = new MatchRecyclerViewAdapter(Admin_Start_Activity.this, match_ArrayList, new MatchRecyclerViewAdapter.ItemClickListener() {
             @Override
             public void onItemClick(Match details) {
+                String team1 = details.homeTeam;
+                String team2 = details.awayTeam;
+
+                Intent transfer_string_vlaues = new Intent(Admin_Start_Activity.this, R1_Activity.class);
+
+                transfer_string_vlaues.putExtra("pass_home_team_name", team1);
+                startActivity(transfer_string_vlaues);
+                finish();
+
+                transfer_string_vlaues.putExtra("pass_away_team_name", team2);
+                startActivity(transfer_string_vlaues);
+                finish();
+
                 startActivity(new Intent(getApplicationContext(), R1_Activity.class));
                 finish();
             }
@@ -72,7 +85,7 @@ public class Admin_Start_Activity extends AppCompatActivity {
     }
 
     private void EventChangeListener() {
-        DB.collection("matches").orderBy("matchDate", Query.Direction.DESCENDING).addSnapshotListener(new EventListener<QuerySnapshot>() {
+        DB.collection("matches").orderBy("matchDate", Query.Direction.ASCENDING).addSnapshotListener(new EventListener<QuerySnapshot>() {
             @Override
             public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
                 if (error != null) {

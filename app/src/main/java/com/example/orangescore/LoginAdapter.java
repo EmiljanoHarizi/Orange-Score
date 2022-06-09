@@ -25,8 +25,8 @@ public class LoginAdapter extends FragmentPagerAdapter {
     public Fragment getItem(int position){
         switch (position){
             case 0:
-                LoginTabFragment loginTabFragment = new LoginTabFragment();
-                return loginTabFragment;
+                Login login = new Login();
+                return login;
             case 1:
                 SignupTabFragment signupTabFragment = new SignupTabFragment();
                 return signupTabFragment;

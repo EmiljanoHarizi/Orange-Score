@@ -22,6 +22,8 @@ import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QuerySnapshot;
+import com.google.firebase.firestore.Source;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
@@ -30,6 +32,8 @@ public class LeagueStartActivity extends AppCompatActivity {
     private Spinner home_pick, away_pick;
     private ImageView home_picture, away_picture;
     private EditText edit_date;
+    private String homeImage,awayImage;
+
 
     private static final String TAG = "LeagueStartActivity";
 
@@ -78,6 +82,9 @@ public class LeagueStartActivity extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int i, long id) {
                 Log.e("ID TEAM", queryHome.getDocuments().get(i).getId());
+                homeImage = "https://upload.wikimedia.org/wikipedia/en/2/22/AEK_NEW_LOGO_3_STARS.png";
+                Picasso.get().load(homeImage).into(home_picture);
+
             }
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
@@ -92,6 +99,8 @@ public class LeagueStartActivity extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int i, long id) {
                 Log.e("ID TEAM", queryAway.getDocuments().get(i).getId());
+                awayImage = "https://upload.wikimedia.org/wikipedia/en/thumb/7/7f/Olympiacos_BC_logo.svg/1200px-Olympiacos_BC_logo.svg.png";
+                Picasso.get().load(awayImage).into(away_picture);
             }
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
@@ -175,4 +184,5 @@ public class LeagueStartActivity extends AppCompatActivity {
         });
 
     }
+
 }

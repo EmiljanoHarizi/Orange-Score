@@ -6,13 +6,13 @@ package com.example.orangescore;
     public Match() {
     }
 
-    public Match(String homeTeam, String awayTeam, String matchDate) {
-        this.homeTeam = homeTeam;
-        this.awayTeam = awayTeam;
-        this.matchDate = matchDate;
-    }
+     public Match(String homeTeam, String awayTeam, String matchDate) {
+         this.homeTeam = homeTeam;
+         this.awayTeam = awayTeam;
+         this.matchDate = matchDate;
+     }
 
-    /** Getter & Setter for the name of home team*/
+     /** Getter & Setter for the name of home team*/
     public String getHomeTeam() {
         return homeTeam;
     }
@@ -35,8 +35,6 @@ package com.example.orangescore;
         return matchDate;
     }
 
-    public void setMatchDate(String matchDate) {
-        this.matchDate = matchDate;
-    }
+    public void setMatchDate(String matchDate) { this.matchDate = matchDate; }
 
-}
+ }

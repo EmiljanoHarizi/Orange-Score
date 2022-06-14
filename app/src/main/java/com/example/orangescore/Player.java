@@ -1,7 +1,18 @@
 package com.example.orangescore;
 
-public class Player {
+import java.io.Serializable;
+
+public class Player implements Serializable {
+    private boolean isChecked = false;
     String player_name, player_photo, player_position, player_team;
+
+    public boolean isChecked() {
+        return isChecked;
+    }
+
+    public void setChecked(boolean checked) {
+        isChecked = checked;
+    }
 
     public Player() {
 
@@ -13,6 +24,7 @@ public class Player {
         this.player_position = player_position;
         this.player_team = player_team;
     }
+
 
     /** Getter & Setter for player's name */
     public String getPlayer_name() {
@@ -49,5 +61,6 @@ public class Player {
     public void setPlayer_team(String player_team) {
         this.player_team = player_team;
     }
+
 }
 

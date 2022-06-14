@@ -34,7 +34,8 @@ public class SignupTabFragment extends Fragment {
    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         ViewGroup root = (ViewGroup) inflater.inflate(R.layout.sign_up_fragment, container, false);
-        
+
+       /** Initialising Variables */
         fAuth = FirebaseAuth.getInstance();
         fStore = FirebaseFirestore.getInstance();
 
@@ -44,6 +45,7 @@ public class SignupTabFragment extends Fragment {
        password = root.findViewById(R.id.pass_sign);
        sign_up = root.findViewById(R.id.sign_up_btn);
 
+       /** Button creates a new user in the data base with the provided credentials */
        sign_up.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View view) {
@@ -85,7 +87,7 @@ public class SignupTabFragment extends Fragment {
        return root;
     }
 
-    /** Η μέθοδος ελέγχει αν έχουν συμπληρωθεί όλα τα κενά*/
+    /** Method checks if the are empty fields that need to be field*/
     private boolean checkField(EditText textField) {
        if (textField.getText().toString().isEmpty()) {
            textField.setError("Fill in the required field");

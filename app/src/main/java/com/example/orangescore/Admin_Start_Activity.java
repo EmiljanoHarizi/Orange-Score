@@ -36,6 +36,8 @@ public class Admin_Start_Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin);
 
+        /** Initialising Variables */
+
         progressDialog = new ProgressDialog(this);
         progressDialog.setCancelable(false);
         progressDialog.setMessage("Fetching Match Data.....");
@@ -51,6 +53,7 @@ public class Admin_Start_Activity extends AppCompatActivity {
 
         match_ArrayList = new ArrayList<Match>();
         match_Adapter = new MatchRecyclerViewAdapter(Admin_Start_Activity.this, match_ArrayList, new MatchRecyclerViewAdapter.ItemClickListener() {
+            /** Click listener here is used to get to activity R1 when selecting a match from the recyclerview */
             @Override
             public void onItemClick(Match details) {
                 String team1 = details.homeTeam;
@@ -81,10 +84,11 @@ public class Admin_Start_Activity extends AppCompatActivity {
             }
         });
 
-        EventChangeListener();
+        GetMatchData();
     }
 
-    private void EventChangeListener() {
+    /** Get's all the matches that are currently in championship */
+    private void GetMatchData() {
         DB.collection("matches").orderBy("matchDate", Query.Direction.ASCENDING).addSnapshotListener(new EventListener<QuerySnapshot>() {
             @Override
             public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {

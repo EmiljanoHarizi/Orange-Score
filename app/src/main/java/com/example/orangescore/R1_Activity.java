@@ -1,11 +1,16 @@
 package com.example.orangescore;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -19,11 +24,13 @@ import com.google.firebase.firestore.QuerySnapshot;
 import java.util.ArrayList;
 
 public class R1_Activity extends AppCompatActivity {
+
     RecyclerView home_recyclerView, away_recyclerView;
-    ArrayList<Player> homePlayers_List, awayPlayers_List;
-    TeamHomeRecyclerViewAdapter home_Adapter;
-    TeamAwayRecyclerViewAdapter away_Adapter;
+    private ArrayList<Player> homePlayers_List, awayPlayers_List;
+    private TeamHomeAdapter home_Adapter;
+    private TeamAwayAdapter away_Adapter;
     FirebaseFirestore DB;
+    Button stats_tracking;
 
     public void onBackPressed() {
         super.onBackPressed();
@@ -31,38 +38,84 @@ public class R1_Activity extends AppCompatActivity {
         finish();
     }
 
+    @SuppressLint("ResourceAsColor")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_r1);
 
+        /** Initialising Variables */
+        stats_tracking = findViewById(R.id.track_stats_btn);
         DB = FirebaseFirestore.getInstance();
 
         /** Populating recycler view that shows the players of home team */
         home_recyclerView = findViewById(R.id.players_home_recyclerView);
-        home_recyclerView.setHasFixedSize(true);
+
         home_recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        home_recyclerView.addItemDecoration(new DividerItemDecoration(this, LinearLayoutManager.VERTICAL));
 
-        homePlayers_List = new ArrayList<Player>();
-        home_Adapter = new TeamHomeRecyclerViewAdapter(R1_Activity.this, homePlayers_List);
-
+        homePlayers_List = new ArrayList<>();
+        home_Adapter = new TeamHomeAdapter(this, homePlayers_List);
         home_recyclerView.setAdapter(home_Adapter);
+
+        RetrieveHomePlayersData();
 
         /** Populating recycler view that shows the players of away team */
         away_recyclerView = findViewById(R.id.players_away_recyclerView);
-        away_recyclerView.setHasFixedSize(true);
+
         away_recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        away_recyclerView.addItemDecoration(new DividerItemDecoration(this, LinearLayoutManager.VERTICAL));
 
-        awayPlayers_List = new ArrayList<Player>();
-        away_Adapter = new TeamAwayRecyclerViewAdapter(R1_Activity.this, awayPlayers_List);
-
+        awayPlayers_List = new ArrayList<>();
+        away_Adapter = new TeamAwayAdapter(this, awayPlayers_List);
         away_recyclerView.setAdapter(away_Adapter);
 
-        EventChangeListenerHome();
-        EventChangeListenerAway();
+        /** Button saves the currently selected players into 2 separate lists and starts the stats tracking activity for those players*/
+        stats_tracking.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                /** Getting a list both for selected players of the Home Team & selected players of Away Team,
+                 * and showing the user which players are selected in short length toast*/
+                if (home_Adapter.getSelectedHomePlayers().size() > 0
+                        && home_Adapter.getSelectedHomePlayers().size() <5
+                        && away_Adapter.getSelectedAwayPlayers().size() > 0
+                        && away_Adapter.getSelectedAwayPlayers().size() <5) {
+                    startActivity(new Intent(getApplicationContext(), R2_Activity.class));
+                    finish();
+                    StringBuilder homeStrBuilder = new StringBuilder();
+                    StringBuilder awayStrBuilder = new StringBuilder();
+
+                    for (int i = 0; i < home_Adapter.getSelectedHomePlayers().size(); i++) {
+                        homeStrBuilder.append(home_Adapter.getSelectedHomePlayers().get(i).getPlayer_name());
+                        homeStrBuilder.append(" ");
+                        homeStrBuilder.append(home_Adapter.getSelectedHomePlayers().get(i).getPlayer_position());
+                        homeStrBuilder.append("\n");
+
+                        ShowToast(homeStrBuilder.toString().trim());
+                    }
+                    for (int i = 0; i < away_Adapter.getSelectedAwayPlayers().size(); i++) {
+                        awayStrBuilder.append(away_Adapter.getSelectedAwayPlayers().get(i).getPlayer_name());
+                        homeStrBuilder.append(" ");
+                        awayStrBuilder.append(away_Adapter.getSelectedAwayPlayers().get(i).getPlayer_position());
+                        awayStrBuilder.append("\n");
+
+                        ShowToast(awayStrBuilder.toString().trim());
+                    }
+                } else {
+                    ShowToast("Not enough or No players selected");
+                }
+            }
+        });
+
+        RetrieveAwayPlayersData();
     }
 
-    private void EventChangeListenerHome() {
+    private void ShowToast(String msg) {
+        Toast.makeText(this, msg ,Toast.LENGTH_SHORT).show();
+    }
+
+    /** Get's all players in the currently selected home team */
+    private void RetrieveHomePlayersData() {
         Bundle bundle = getIntent().getExtras();
         String homePlayers = bundle.getString("pass_home_team_name");
 
@@ -83,7 +136,8 @@ public class R1_Activity extends AppCompatActivity {
         });
     }
 
-    private void EventChangeListenerAway() {
+    /** Get's all players data in the currently selected away team */
+    private void RetrieveAwayPlayersData() {
         Bundle bundle = getIntent().getExtras();
         String awayPlayers = bundle.getString("pass_away_team_name");
 
@@ -104,5 +158,4 @@ public class R1_Activity extends AppCompatActivity {
 
         });
     }
-
 }

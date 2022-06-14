@@ -5,7 +5,7 @@ import android.content.Context;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
-
+/** Class is used from the Login activity in order show login layout or sign up layout */
 public class LoginAdapter extends FragmentPagerAdapter {
 
     private Context context;

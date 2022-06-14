@@ -1,17 +1,15 @@
 package com.example.orangescore;
 
 import android.content.Context;
-import android.telecom.Call;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
 import java.util.ArrayList;
 
+/** Custom adapter made to populate recycler view that shows matches in current championship */
 public class MatchRecyclerViewAdapter extends RecyclerView.Adapter<MatchRecyclerViewAdapter.MyViewHolder> {
     Context context;
     ArrayList<Match> list_of_matches;

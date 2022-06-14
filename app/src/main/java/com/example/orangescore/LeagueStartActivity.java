@@ -73,7 +73,7 @@ public class LeagueStartActivity extends AppCompatActivity {
         homeList = new ArrayList<>();
         awayList = new ArrayList<>();
 
-        /** Make spinners to select teams */
+        /** Selecting a team from the spinner sets it as Home Team */
         adapter_homeList = new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_spinner_dropdown_item, homeList);
         adapter_homeList.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         home_pick.setAdapter(adapter_homeList);
@@ -91,6 +91,7 @@ public class LeagueStartActivity extends AppCompatActivity {
             }
         });
 
+        /** Selecting a team from the spinner sets it as Away Team */
         adapter_awayList = new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_spinner_dropdown_item, awayList);
         adapter_awayList.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         away_pick.setAdapter(adapter_awayList);

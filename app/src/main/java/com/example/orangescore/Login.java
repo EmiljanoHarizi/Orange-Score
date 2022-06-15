@@ -101,7 +101,7 @@ public class Login extends Fragment {
                 }
                 if(documentSnapshot.getString("isUser") != null) {
                     /** When the user is not admin */
-                    getActivity().startActivity(new Intent(getActivity().getApplicationContext(), R4_Activity.class));
+                    getActivity().startActivity(new Intent(getActivity().getApplicationContext(), R6_Activity.class));
                     getActivity().finish();
                 }
 

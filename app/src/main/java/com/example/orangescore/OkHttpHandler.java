@@ -21,7 +21,7 @@ public class OkHttpHandler {
         StrictMode.setThreadPolicy(policy);
     }
 
-    ArrayList<PlayerStats> fetchPlayerStats(String url) throws Exception{
+    ArrayList<PlayerStats> fetchPlayerStatsGame(String url) throws Exception{
         ArrayList<PlayerStats> psList = new ArrayList<>();
         OkHttpClient client = new OkHttpClient().newBuilder().build();
         RequestBody body = RequestBody.create(MediaType.parse("text/plain"), "");
@@ -47,7 +47,7 @@ public class OkHttpHandler {
         return psList;
     }
 
-    ArrayList<PlayerStats> getPlayerStats(String url) throws Exception{
+    ArrayList<PlayerStats> getPlayerStatsSeason(String url) throws Exception{
         ArrayList<PlayerStats> psList = new ArrayList<>();
         OkHttpClient client = new OkHttpClient().newBuilder().build();
         RequestBody body = RequestBody.create(MediaType.parse("text/plain"), "");
@@ -65,7 +65,7 @@ public class OkHttpHandler {
                 int playerPoints = json.getJSONObject(brand).getInt("points");
                 int playerRebounds = json.getJSONObject(brand).getInt("rebounds");
                 int playerAssists = json.getJSONObject(brand).getInt("assists");
-                String playerTeam = json.getJSONObject(brand).getString("team");
+                String playerTeam = "";
                 psList.add(new PlayerStats(playerName, playerPoints, playerRebounds, playerAssists,playerTeam));
             }
         } catch (JSONException e){

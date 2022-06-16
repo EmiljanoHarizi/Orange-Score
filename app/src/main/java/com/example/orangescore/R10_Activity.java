@@ -17,8 +17,13 @@ public class R10_Activity extends AppCompatActivity {
     Button logout;
     ArrayList<PlayerStats> playersList = new ArrayList<>();
     /** Το IP ίσως θα χρειαστει αλλαγή για να ανοιξει, αναλόγως την IP του υπολογιστη */
-    private final String myIP = "192.168.1.6";
-    String playerStatsURL = "http://" + myIP + "/OrangeScore/fetchPlayers.php";
+    //private final String myIP = "192.168.1.6";
+    //String playerStatsURL = "http://" + myIP + "/OrangeScore/fetchPlayers.php";
+    /** Live Βάση δεδομένων */
+    private final String myIP = "tim.alwaysdata.net";
+
+    /** Κάνει Fetch απο την βάση δεδομένων */
+    private final String playerStatsURL = "https://"+myIP+"/fetchPlayers.php";
 
     /** Για να συμπληρώσω τα Table */
     private final int[][] player_list_stats = {
@@ -130,7 +135,7 @@ public class R10_Activity extends AppCompatActivity {
     private void GetDataFromDB() throws Exception {
         OkHttpHandler ok = new OkHttpHandler();
         /** Βάζω τους παίκτες στη λίστα */
-        playersList = ok.getPlayerStats(playerStatsURL);
+        playersList = ok.getPlayerStatsSeason(playerStatsURL);
 
         /** Κάνω sort με βάση το σύνολο των πόντων/ριμπάουντ/ασιστ */
         Collections.sort(playersList,new SortByTotal());

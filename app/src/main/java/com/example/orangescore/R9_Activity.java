@@ -19,7 +19,8 @@ import java.util.Collections;
 public class R9_Activity<Team1> extends AppCompatActivity {
     ArrayList<PlayerStats> playersList = new ArrayList<>();
     Button Team1, Team2, totalTeam;
-    private final String myIP = "192.168.1.6";
+    private final String myIP = "tim.alwaysdata.net";
+    //private final String myIP = "192.168.1.6";
 
     private int[][] player_list_stats = {
             {R.id.player1, R.id.playerpoints1,R.id.playerrebound1,R.id.playerassist1},
@@ -41,13 +42,13 @@ public class R9_Activity<Team1> extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_r9);
 
-        ManualPlayerData();
+        //ManualPlayerData();
 
-//        try {
-//            fetchDataFromDB();
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
+        try {
+            fetchDataFromDB();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         totalTeam = findViewById(R.id.Sunolo);
         totalTeam.setOnClickListener(v -> {
             int j = 0;
@@ -88,10 +89,10 @@ public class R9_Activity<Team1> extends AppCompatActivity {
     }
 
     private void fetchDataFromDB() throws Exception {
-        String url = "http://"+myIP+"/OrangeScore/getData.php";
+        String url = "https://"+myIP+"/fetchPlayersGame.php";
 
         OkHttpHandler ok = new OkHttpHandler();
-        playersList = ok.fetchPlayerStats(url);
+        playersList = ok.fetchPlayerStatsGame(url);
 
         for(int i=0; i < playersList.size(); i++){
             ((TextView) findViewById(player_list_stats[i][0])).setText(playersList.get(i).player_name);

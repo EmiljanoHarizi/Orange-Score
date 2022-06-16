@@ -1,0 +1,622 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".R9_Activity">
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="60dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.643"
+                app:layout_constraintStart_toEndOf="@+id/imageView3"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@mipmap/app_icon" />
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="76dp"
+                android:layout_marginTop="60dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@mipmap/app_icon" />
+
+            <TextView
+                android:id="@+id/GreeceTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="28dp"
+                android:layout_marginTop="8dp"
+                android:text="Ελλάδα"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/Team1Txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="84dp"
+                android:layout_marginTop="8dp"
+                android:text="ΟμαδαΑ"
+                app:layout_constraintEnd_toStartOf="@+id/Team2Txt"
+                app:layout_constraintHorizontal_bias="0.008"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+
+            <TextView
+                android:id="@+id/Team2Txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="104dp"
+                android:text="ΟμαδαΒ"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+            <TextView
+                android:id="@+id/FinalTxt"
+                android:layout_width="54dp"
+                android:layout_height="18dp"
+                android:text="Τελικο"
+                app:layout_constraintBottom_toTopOf="@+id/toolbar"
+                app:layout_constraintEnd_toStartOf="@+id/imageView"
+                app:layout_constraintHorizontal_bias="0.55"
+                app:layout_constraintStart_toEndOf="@+id/imageView3"
+                app:layout_constraintTop_toBottomOf="@+id/ScorTxt"
+                app:layout_constraintVertical_bias="0.385" />
+
+            <TextView
+                android:id="@+id/ScorTxt"
+                android:layout_width="71dp"
+                android:layout_height="23dp"
+                android:layout_marginTop="76dp"
+                android:text="Σκορ-Σκορ"
+                app:layout_constraintEnd_toStartOf="@+id/imageView"
+                app:layout_constraintHorizontal_bias="0.423"
+                app:layout_constraintStart_toEndOf="@+id/imageView3"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Spinner
+                android:id="@+id/spinner"
+                android:layout_width="267dp"
+                android:layout_height="56dp"
+                android:entries="@array/year_dates_hours"
+                app:layout_constraintBottom_toTopOf="@+id/ScorTxt"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.527"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.8" />
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="413dp"
+                android:layout_height="120dp"
+                android:background="?attr/colorPrimary"
+                android:minHeight="?attr/actionBarSize"
+                android:theme="?attr/actionBarTheme"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.288" />
+
+            <View
+                android:id="@+id/divider12"
+                android:layout_width="417dp"
+                android:layout_height="3dp"
+                android:background="?android:attr/listDivider"
+                app:layout_constraintBottom_toTopOf="@+id/Team1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/toolbar"
+                app:layout_constraintVertical_bias="0.655" />
+
+            <Button
+                android:id="@+id/Sunolo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginBottom="8dp"
+                android:backgroundTint="@android:color/holo_red_dark"
+                android:text="Συνολο"
+                app:layout_constraintBottom_toBottomOf="@+id/toolbar"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <Button
+                android:id="@+id/Team1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginBottom="8dp"
+                android:backgroundTint="@color/black"
+                android:text="Ομαδα 1"
+                app:layout_constraintBottom_toTopOf="@+id/tableRow15"
+                app:layout_constraintStart_toEndOf="@+id/Sunolo" />
+
+            <Button
+                android:id="@+id/Team2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:backgroundTint="@color/black"
+                android:text="Ομαδα 2"
+                app:layout_constraintBottom_toBottomOf="@+id/toolbar"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.223"
+                app:layout_constraintStart_toEndOf="@+id/Team1" />
+
+            <TextView
+                android:id="@+id/BasketLeagueTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="BasketLeague"
+                app:layout_constraintBottom_toTopOf="@+id/imageView3"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.036"
+                app:layout_constraintStart_toEndOf="@+id/GreeceTxt"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.195" />
+
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="18dp"
+                android:layout_height="12dp"
+                android:layout_marginStart="8dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@mipmap/app_icon" />
+
+            <TableRow
+                android:id="@+id/tableRow15"
+                android:layout_width="411dp"
+                android:layout_height="27dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/toolbar">
+
+                <TextView
+                    android:id="@+id/PaixtesText"
+                    android:layout_width="335dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:text="ΠΑΙΚΤΕΣ" />
+
+                <TextView
+                    android:id="@+id/POTxt"
+                    android:layout_width="32dp"
+                    android:layout_height="wrap_content"
+                    android:text="ΠΟ" />
+
+                <TextView
+                    android:id="@+id/PITxt"
+                    android:layout_width="24dp"
+                    android:layout_height="wrap_content"
+                    android:text="ΡΙ" />
+
+                <TextView
+                    android:id="@+id/AssistTxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ΑΣ" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow17"
+                android:layout_width="411dp"
+                android:layout_height="46dp"
+                android:layout_marginTop="28dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tableRow15">
+
+                <ImageView
+                    android:id="@+id/imageView5"
+                    android:layout_width="39dp"
+                    android:layout_height="wrap_content"
+                    tools:srcCompat="@tools:sample/avatars" />
+
+                <TextView
+                    android:id="@+id/player1"
+                    android:layout_width="293dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:text="ΠΑΙΚΤΗΣ 1" />
+
+                <TextView
+                    android:id="@+id/playerpoints1"
+                    android:layout_width="32dp"
+                    android:layout_height="33dp"
+                    android:text="1" />
+
+                <TextView
+                    android:id="@+id/playerrebound1"
+                    android:layout_width="26dp"
+                    android:layout_height="32dp"
+                    android:text="1" />
+
+                <TextView
+                    android:id="@+id/playerassist1"
+                    android:layout_width="23dp"
+                    android:layout_height="32dp"
+                    android:text="1" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow16"
+                android:layout_width="411dp"
+                android:layout_height="43dp"
+                app:layout_constraintBottom_toTopOf="@+id/tableRow18"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tableRow17">
+
+                <ImageView
+                    android:id="@+id/imageView6"
+                    android:layout_width="37dp"
+                    android:layout_height="wrap_content"
+                    tools:srcCompat="@tools:sample/avatars" />
+
+                <TextView
+                    android:id="@+id/player2"
+                    android:layout_width="295dp"
+                    android:layout_height="match_parent"
+                    android:text="ΠΑΙΚΤΗΣ 2" />
+
+                <TextView
+                    android:id="@+id/playerpoints2"
+                    android:layout_width="33dp"
+                    android:layout_height="match_parent"
+                    android:text="1" />
+
+                <TextView
+                    android:id="@+id/playerrebound2"
+                    android:layout_width="25dp"
+                    android:layout_height="match_parent"
+                    android:text="1" />
+
+                <TextView
+                    android:id="@+id/playerassist2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="1" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow18"
+                android:layout_width="410dp"
+                android:layout_height="37dp"
+                app:layout_constraintBottom_toTopOf="@+id/tableRow19"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <ImageView
+                    android:id="@+id/imageView7"
+                    android:layout_width="39dp"
+                    android:layout_height="match_parent"
+                    tools:srcCompat="@tools:sample/avatars" />
+
+                <TextView
+                    android:id="@+id/player3"
+                    android:layout_width="293dp"
+                    android:layout_height="match_parent"
+                    android:text="ΠΑΙΚΤΗΣ 3" />
+
+                <TextView
+                    android:id="@+id/playerpoints3"
+                    android:layout_width="33dp"
+                    android:layout_height="match_parent"
+                    android:text="1" />
+
+                <TextView
+                    android:id="@+id/playerrebound3"
+                    android:layout_width="24dp"
+                    android:layout_height="match_parent"
+                    android:text="1" />
+
+                <TextView
+                    android:id="@+id/playerassist3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="1" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow19"
+                android:layout_width="410dp"
+                android:layout_height="42dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tableRow18">
+
+                <ImageView
+                    android:id="@+id/imageView8"
+                    android:layout_width="37dp"
+                    android:layout_height="wrap_content"
+                    tools:srcCompat="@tools:sample/avatars" />
+
+                <TextView
+                    android:id="@+id/player4"
+                    android:layout_width="295dp"
+                    android:layout_height="match_parent"
+                    android:text="ΠΑΙΚΤΗΣ 4" />
+
+                <TextView
+                    android:id="@+id/playerpoints4"
+                    android:layout_width="32dp"
+                    android:layout_height="match_parent"
+                    android:text="1" />
+
+                <TextView
+                    android:id="@+id/playerrebound4"
+                    android:layout_width="25dp"
+                    android:layout_height="match_parent"
+                    android:text="1" />
+
+                <TextView
+                    android:id="@+id/playerassist4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="1" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow20"
+                android:layout_width="409dp"
+                android:layout_height="38dp"
+                app:layout_constraintBottom_toTopOf="@+id/tableRow22"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tableRow19">
+
+                <ImageView
+                    android:id="@+id/imageView9"
+                    android:layout_width="39dp"
+                    android:layout_height="wrap_content"
+                    tools:srcCompat="@tools:sample/avatars" />
+
+                <TextView
+                    android:id="@+id/player5"
+                    android:layout_width="293dp"
+                    android:layout_height="match_parent"
+                    android:text="ΠΑΙΚΤΗΣ 5" />
+
+                <TextView
+                    android:id="@+id/playerpoints5"
+                    android:layout_width="32dp"
+                    android:layout_height="match_parent"
+                    android:text="1" />
+
+                <TextView
+                    android:id="@+id/playerrebound5"
+                    android:layout_width="26dp"
+                    android:layout_height="match_parent"
+                    android:text="1" />
+
+                <TextView
+                    android:id="@+id/playerassist5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="1" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow22"
+                android:layout_width="410dp"
+                android:layout_height="42dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tableRow20">
+
+                <ImageView
+                    android:id="@+id/imageView10"
+                    android:layout_width="39dp"
+                    android:layout_height="wrap_content"
+                    tools:srcCompat="@tools:sample/avatars" />
+
+                <TextView
+                    android:id="@+id/player6"
+                    android:layout_width="293dp"
+                    android:layout_height="match_parent"
+                    android:text="ΠΑΙΚΤΗΣ 6" />
+
+                <TextView
+                    android:id="@+id/playerpoints6"
+                    android:layout_width="32dp"
+                    android:layout_height="match_parent"
+                    android:text="1" />
+
+                <TextView
+                    android:id="@+id/playerrebound6"
+                    android:layout_width="27dp"
+                    android:layout_height="match_parent"
+                    android:text="1" />
+
+                <TextView
+                    android:id="@+id/playerassist6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="1" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow21"
+                android:layout_width="411dp"
+                android:layout_height="40dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tableRow22">
+
+                <ImageView
+                    android:id="@+id/imageView11"
+                    android:layout_width="39dp"
+                    android:layout_height="wrap_content"
+                    tools:srcCompat="@tools:sample/avatars" />
+
+                <TextView
+                    android:id="@+id/player7"
+                    android:layout_width="294dp"
+                    android:layout_height="match_parent"
+                    android:text="ΠΑΙΚΤΗΣ 7" />
+
+                <TextView
+                    android:id="@+id/playerpoints7"
+                    android:layout_width="32dp"
+                    android:layout_height="match_parent"
+                    android:text="1" />
+
+                <TextView
+                    android:id="@+id/playerrebound7"
+                    android:layout_width="27dp"
+                    android:layout_height="match_parent"
+                    android:text="1" />
+
+                <TextView
+                    android:id="@+id/playerassist7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="1" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow24"
+                android:layout_width="416dp"
+                android:layout_height="36dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tableRow21">
+
+                <ImageView
+                    android:id="@+id/imageView12"
+                    android:layout_width="36dp"
+                    android:layout_height="wrap_content"
+                    tools:srcCompat="@tools:sample/avatars" />
+
+                <TextView
+                    android:id="@+id/player8"
+                    android:layout_width="301dp"
+                    android:layout_height="match_parent"
+                    android:text="ΠΑΙΚΤΗΣ 8" />
+
+                <TextView
+                    android:id="@+id/playerpoints8"
+                    android:layout_width="32dp"
+                    android:layout_height="match_parent"
+                    android:text="1" />
+
+                <TextView
+                    android:id="@+id/playerrebound8"
+                    android:layout_width="27dp"
+                    android:layout_height="match_parent"
+                    android:text="1" />
+
+                <TextView
+                    android:id="@+id/playerassist8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="1" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow23"
+                android:layout_width="411dp"
+                android:layout_height="37dp"
+                app:layout_constraintBottom_toTopOf="@+id/tableRow25"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <ImageView
+                    android:id="@+id/imageView13"
+                    android:layout_width="37dp"
+                    android:layout_height="wrap_content"
+                    tools:srcCompat="@tools:sample/avatars" />
+
+                <TextView
+                    android:id="@+id/player9"
+                    android:layout_width="296dp"
+                    android:layout_height="match_parent"
+                    android:text="ΠΑΙΚΤΗΣ 9" />
+
+                <TextView
+                    android:id="@+id/playerpoints9"
+                    android:layout_width="29dp"
+                    android:layout_height="match_parent"
+                    android:text="1" />
+
+                <TextView
+                    android:id="@+id/playerrebound9"
+                    android:layout_width="26dp"
+                    android:layout_height="match_parent"
+                    android:text="1" />
+
+                <TextView
+                    android:id="@+id/playerassist9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="1" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow25"
+                android:layout_width="410dp"
+                android:layout_height="34dp"
+                android:layout_marginTop="80dp"
+                android:layout_marginBottom="13dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tableRow21">
+
+                <ImageView
+                    android:id="@+id/imageView14"
+                    android:layout_width="38dp"
+                    android:layout_height="wrap_content"
+                    tools:srcCompat="@tools:sample/avatars" />
+
+                <TextView
+                    android:id="@+id/player10"
+                    android:layout_width="295dp"
+                    android:layout_height="match_parent"
+                    android:text="ΠΑΙΚΤΗΣ 10" />
+
+                <TextView
+                    android:id="@+id/playerpoints10"
+                    android:layout_width="30dp"
+                    android:layout_height="match_parent"
+                    android:text="1" />
+
+                <TextView
+                    android:id="@+id/playerrebound10"
+                    android:layout_width="26dp"
+                    android:layout_height="match_parent"
+                    android:text="1" />
+
+                <TextView
+                    android:id="@+id/playerassist10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="1" />
+            </TableRow>
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="240dp"
+                android:layout_height="36dp"
+                android:text="Ατομικα Στατιστικα"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="@+id/divider12"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.181"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/FinalTxt"
+                app:layout_constraintVertical_bias="0.933" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+</ScrollView>

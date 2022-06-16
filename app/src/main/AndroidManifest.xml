@@ -26,6 +26,8 @@
             android:exported="false" />
         <activity android:name=".LeagueStartActivity" />
         <activity android:name=".R4_Activity" />
+        <activity android:name=".R9_Activity" />
+        <activity android:name=".R10_Activity" />
         <activity android:name=".Admin_Start_Activity" />
         <activity
             android:name=".R6_Activity"

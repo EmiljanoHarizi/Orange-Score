@@ -4,8 +4,15 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.ArrayList;
 
 
 public class R6_Activity extends AppCompatActivity {
@@ -31,8 +38,7 @@ public class R6_Activity extends AppCompatActivity {
         next = findViewById(R.id.btn_next);
 
         //Ο ΧΡΗΣΤΗΣ ΔΙΑΛΕΓΕΙ ΠΟΙΟ ΜΑΤΣ ΘΑ ΔΕΙ ΚΑΙ ΜΕΤΑ ΑΠΟ ΤΟ ΕΠΙΛΕΓΜΕΝΟ ΜΑΤΣ ΕΜΦΑΝΙΖΟΝΤΑΙ ΟΙ ΠΑΡΑΚΑΤΩ ΠΛΗΡΟΦΟΡΙΕΣ ΩΣ ΠΕΡΑΣΜΑ
-        /*db = FirebaseFirestore.getInstance();
-        TextView home = findViewById(R.id.team1);
+        /*TextView home = findViewById(R.id.team1);
         TextView away = findViewById(R.id.team2);
 
         TextView hplayer1 = findViewById(R.id.t1player1);
@@ -163,6 +169,7 @@ public class R6_Activity extends AppCompatActivity {
         TextView ako5 = findViewById(R.id.ko11);
         TextView ako6 = findViewById(R.id.ko12);
 
+        db = FirebaseFirestore.getInstance();
         StringBuilder homebuilder = new StringBuilder();
         StringBuilder awaybuilder = new StringBuilder();
 
@@ -213,6 +220,7 @@ public class R6_Activity extends AppCompatActivity {
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                FirebaseAuth.getInstance().signOut();
                 startActivity(new Intent(getApplicationContext(), MainActivity.class));
                 finish();
             }

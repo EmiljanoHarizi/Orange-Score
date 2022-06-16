@@ -20,8 +20,8 @@
         <activity android:name=".LeagueStartActivity" />
         <activity android:name=".R4_Activity" />
         <activity android:name=".Admin_Start_Activity" />
-        <activity android:name=".R6_Activity" />
-        <activity
+        <activity android:name=".R6_Activity"
+            android:label="Orange Score - Statistics"/>        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

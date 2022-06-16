@@ -12,14 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.OrangeScore">
         <activity
-            android:name=".R5_Activity"
-            android:exported="false" />
-        <activity
             android:name=".R8_Activity"
             android:exported="false" />
         <activity
             android:name=".R7_Activity"
-            android:parentActivityName=".R6_Activity" />
+            android:parentActivityName=".R6_Activity"
+             />
         <activity
             android:name=".R2_Activity"
             android:exported="false" />

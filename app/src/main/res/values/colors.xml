@@ -18,5 +18,9 @@
     <color name="deep_wine">#5C0C08</color>
     <color name="orange">#CE6232</color>
 
+    <color name="grey">#757D7D</color>
+    <color name="redBtn">#C92525</color>
+    <color name="grayBtn">#333131</color>
+
 
 </resources>

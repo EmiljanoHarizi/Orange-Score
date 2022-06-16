@@ -11,6 +11,9 @@ public class PlayerStats {
         this.player_assists = player_assists;
         this.player_team = player_team;
     }
+    public int getPlayerTotal(){
+        return player_points + player_assists + player_rebounds;
+    }
 
     /** Getters And Setters for Player */
     public String getPlayer_name() {

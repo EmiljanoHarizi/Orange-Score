@@ -47,4 +47,32 @@ public class OkHttpHandler {
         return psList;
     }
 
+    ArrayList<PlayerStats> getPlayerStats(String url) throws Exception{
+        ArrayList<PlayerStats> psList = new ArrayList<>();
+        OkHttpClient client = new OkHttpClient().newBuilder().build();
+        RequestBody body = RequestBody.create(MediaType.parse("text/plain"), "");
+        Request request = new Request.Builder().url(url).method("POST",body).build();
+        Response response = client.newCall(request).execute();
+        String data = response.body().string();
+        System.out.println("My response: " + data);
+        try {
+
+            JSONObject json = new JSONObject(data);
+            Iterator<String> keys = json.keys();
+            while (keys.hasNext()) {
+                String brand = keys.next();
+                String playerName = json.getJSONObject(brand).getString("pname");
+                int playerPoints = json.getJSONObject(brand).getInt("points");
+                int playerRebounds = json.getJSONObject(brand).getInt("rebounds");
+                int playerAssists = json.getJSONObject(brand).getInt("assists");
+                String playerTeam = json.getJSONObject(brand).getString("team");
+                psList.add(new PlayerStats(playerName, playerPoints, playerRebounds, playerAssists,playerTeam));
+            }
+        } catch (JSONException e){
+            e.printStackTrace();
+        }
+
+        return psList;
+    }
+
 }

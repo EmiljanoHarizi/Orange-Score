@@ -64,4 +64,10 @@
         <item>2021/2022 01:00</item>
         <item>2022/2023 02:00</item>
     </string-array>
+    <string-array name="year_dates">
+        <item>2021/2022</item>
+        <item>2020/2021</item>
+        <item>2019/2020</item>
+        <item>2018/2019</item>
+    </string-array>
 </resources>

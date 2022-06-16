@@ -99,7 +99,7 @@ public class Login extends Fragment {
                 }
                 if(documentSnapshot.getString("isUser") != null) {
                     /** Όταν είναι απλός χρήστης */
-                    getActivity().startActivity(new Intent(getActivity().getApplicationContext(), R6_Activity.class));
+                    getActivity().startActivity(new Intent(getActivity().getApplicationContext(), R4_Activity.class));
                     getActivity().finish();
                 }
 

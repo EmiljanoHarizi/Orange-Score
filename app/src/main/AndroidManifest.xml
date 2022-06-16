@@ -29,6 +29,9 @@
             android:exported="false" />
         <activity android:name=".R4_Activity" />
         <activity android:name=".R5_Activity" />
+        <activity android:name=".R9_Activity" />
+        <activity android:name=".R10_Activity" />
+        <activity android:name=".Admin_Start_Activity" />
         <activity
             android:name=".R6_Activity"
             android:label="Orange Score - Statistics" />
@@ -39,10 +42,7 @@
         <activity
             android:name=".R8_Activity"
             android:exported="false" />
-        <activity android:name=".R9_Activity" />
-        <activity android:name=".R10_Activity" />
         <activity android:name=".LeagueStartActivity" />
-        <activity android:name=".Admin_Start_Activity" />
 
 
     </application>

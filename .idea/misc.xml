@@ -3,9 +3,6 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/ponti/AndroidStudioProjects/Orange Score/app/src/main/res/layout/activity_r6.xml" value="0.264" />
-        <entry key="..\:/Users/ponti/AndroidStudioProjects/Orange Score/app/src/main/res/layout/activity_r7.xml" value="0.2" />
-        <entry key="..\:/Users/ponti/AndroidStudioProjects/Orange Score/app/src/main/res/layout/list_item_r7.xml" value="0.264" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Orange-Score-Basketball-Stats/app/src/main/res/drawable/edit_text_bg.xml" value="0.2115" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Orange-Score-Basketball-Stats/app/src/main/res/layout/activity_login.xml" value="0.18" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Orange-Score-Basketball-Stats/app/src/main/res/layout/activity_r1.xml" value="0.25" />
@@ -65,7 +62,7 @@
         <entry key="app/src/main/res/layout/activity_r3.xml" value="0.2536231884057971" />
         <entry key="app/src/main/res/layout/activity_r4.xml" value="0.2504528985507246" />
         <entry key="app/src/main/res/layout/activity_r6.xml" value="0.2504528985507246" />
-        <entry key="app/src/main/res/layout/activity_r7.xml" value="0.2556442260742187" />
+        <entry key="app/src/main/res/layout/activity_r7.xml" value="0.2877029418945314" />
         <entry key="app/src/main/res/layout/activity_r7_test.xml" value="0.21784420289855072" />
         <entry key="app/src/main/res/layout/activity_r8.xml" value="0.259375" />
         <entry key="app/src/main/res/layout/item.xml" value="0.213768115942029" />

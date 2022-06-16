@@ -4,18 +4,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.RecyclerView;
-
-import com.google.firebase.firestore.FirebaseFirestore;
-
-import java.util.ArrayList;
 
 
 public class R6_Activity extends AppCompatActivity {
     Button logout;
+    Button next;
     //ΚΑΠΟΙΑ ΑΠΟ ΤΑ ΠΑΡΑΚΑΤΩ ΣΗΜΕΙΑ ΕΧΟΥΝ ΓΡΑΦΤΕΙ ΩΣ ΣΧΟΛΙΑ, ΓΙΑΤΙ ΑΛΛΙΩΣ ΔΕΝ ΕΜΦΑΝΙΖΟΝΤΑΝ Η ΣΕΛΙΔΑ ΜΟΥ(αυτα που αφορουν τη βαση)
     //ΟΙ ΜΕΤΑΒΛΗΤΕΣ ΠΟΥ ΘΑ ΧΡΕΙΑΣΤΩ ΓΙΑ ΝΑ ΠΕΡΑΣΩ ΤΙΣ ΑΝΤΙΣΤΟΙΧΕΣ ΤΙΜΕΣ ΣΤΑ TEXTVIEWS ΓΙΑ ΤΙΣ ΟΜΑΔΕΣ ΚΑΙ ΤΟΥΣ ΠΑΙΧΤΕΣ
     /*RecyclerView homerec, awayrec;
@@ -32,7 +27,8 @@ public class R6_Activity extends AppCompatActivity {
         setContentView(R.layout.activity_r6);
 
         //ΔΗΛΩΣΗ ΜΕΤΑΒΛΗΤΩΝ
-        logout = findViewById(R.id.logout_btn);
+        logout = findViewById(R.id.btn_logout);
+        next = findViewById(R.id.btn_next);
 
         //Ο ΧΡΗΣΤΗΣ ΔΙΑΛΕΓΕΙ ΠΟΙΟ ΜΑΤΣ ΘΑ ΔΕΙ ΚΑΙ ΜΕΤΑ ΑΠΟ ΤΟ ΕΠΙΛΕΓΜΕΝΟ ΜΑΤΣ ΕΜΦΑΝΙΖΟΝΤΑΙ ΟΙ ΠΑΡΑΚΑΤΩ ΠΛΗΡΟΦΟΡΙΕΣ ΩΣ ΠΕΡΑΣΜΑ
         /*db = FirebaseFirestore.getInstance();
@@ -218,6 +214,14 @@ public class R6_Activity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                finish();
+            }
+        });
+
+        next.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), R7_Activity.class));
                 finish();
             }
         });

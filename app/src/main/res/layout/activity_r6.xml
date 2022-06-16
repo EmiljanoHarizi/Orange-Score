@@ -140,21 +140,25 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/logout_btn"
+        android:id="@+id/btn_logout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="104dp"
+        android:layout_marginBottom="4dp"
+        android:backgroundTint="@color/ocean_blue"
         android:onClick="LOGIN"
         android:text="LOGOUT"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="TextContrastCheck" />
 
     <TableRow
         android:id="@+id/tableRow"
         android:layout_width="409dp"
         android:layout_height="28dp"
         android:layout_marginBottom="16dp"
-        android:background="@color/ocean_blue"
+        android:background="@color/teal_700"
         android:paddingLeft="150dp"
         app:layout_constraintBottom_toTopOf="@+id/team1"
         app:layout_constraintEnd_toEndOf="parent"
@@ -249,7 +253,7 @@
         android:layout_height="wrap_content"
         android:text="AEK B.C."
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textColor="@color/ocean_blue"
+        android:textColor="@color/teal_700"
         app:layout_constraintBottom_toTopOf="@+id/tableRow"
         app:layout_constraintEnd_toStartOf="@+id/textView3"
         app:layout_constraintHorizontal_bias="0.943"
@@ -264,7 +268,7 @@
         android:layout_marginEnd="68dp"
         android:text="Olympiacos B.C."
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textColor="@color/ocean_blue"
+        android:textColor="@color/teal_700"
         app:layout_constraintBottom_toTopOf="@+id/tableRow"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -277,7 +281,7 @@
         android:layout_marginEnd="8dp"
         android:text="-"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textColor="@color/ocean_blue"
+        android:textColor="@color/teal_700"
         app:layout_constraintBottom_toTopOf="@+id/tableRow"
         app:layout_constraintEnd_toStartOf="@+id/textView2"
         app:layout_constraintTop_toTopOf="parent"
@@ -398,7 +402,7 @@
         android:layout_height="1dp"
         android:layout_marginBottom="36dp"
         android:background="?android:attr/listDivider"
-        app:layout_constraintBottom_toTopOf="@+id/logout_btn"
+        app:layout_constraintBottom_toTopOf="@+id/btn_logout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -1307,7 +1311,7 @@
         android:layout_width="305dp"
         android:layout_height="20dp"
         android:paddingLeft="70dp"
-        app:layout_constraintBottom_toTopOf="@+id/logout_btn"
+        app:layout_constraintBottom_toTopOf="@+id/btn_logout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/divider11"
         app:layout_constraintVertical_bias="1.0">
@@ -1342,6 +1346,7 @@
             android:paddingLeft="23dp"
             android:text="G"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
         <TextView
             android:id="@+id/ep12"
             android:layout_width="wrap_content"
@@ -1382,5 +1387,19 @@
             android:text="1"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
     </TableRow>
+
+    <Button
+        android:id="@+id/btn_next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:backgroundTint="@color/ocean_blue"
+        android:text="NEXT"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.207"
+        app:layout_constraintStart_toEndOf="@+id/btn_logout"
+        tools:ignore="TextContrastCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

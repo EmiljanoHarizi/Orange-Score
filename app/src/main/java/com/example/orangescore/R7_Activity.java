@@ -26,6 +26,7 @@ import com.squareup.picasso.Picasso;
 public class R7_Activity extends AppCompatActivity {
 
     Button logout_button;
+    Button r8_button;
     RecyclerView teamlist;
     FirebaseFirestore fb;
      private FirestoreRecyclerAdapter adapter;
@@ -43,6 +44,17 @@ public class R7_Activity extends AppCompatActivity {
             public void onClick(View v) {
                 FirebaseAuth.getInstance().signOut();
                 startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                finish();
+            }
+        });
+
+        r8_button = findViewById(R.id.r8_btn);
+
+        r8_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FirebaseAuth.getInstance().signOut();
+                startActivity(new Intent(getApplicationContext(), R8_Activity.class));
                 finish();
             }
         });

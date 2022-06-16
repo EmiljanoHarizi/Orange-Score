@@ -36,7 +36,6 @@ public class Login extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         ViewGroup root = (ViewGroup) inflater.inflate(R.layout.log_in_fragment, container, false);
 
-        /** Initialising Variables */
         fAuth = FirebaseAuth.getInstance();
         fStore = FirebaseFirestore.getInstance();
 
@@ -56,7 +55,6 @@ public class Login extends Fragment {
         password.animate().translationX(0).alpha(1).setDuration(800).setStartDelay(300).start();
         login.animate().translationX(0).alpha(1).setDuration(800).setStartDelay(300).start();
 
-        /** login button */
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -84,24 +82,24 @@ public class Login extends Fragment {
     }
 
 
-    /** Method checks access level of user in case there is an admin it redirects the user to admin interface, if not redirects to simple user interface */
+
     private void checkUserAccessLevel(String uid) {
         DocumentReference df = fStore.collection("Users").document(uid);
-        /** Retrieving date from the database to check if user is admin or not */
+        /** Κάνω extract τα δεδομένα απο την βάση μου για να ελέγξω αν ο χρήστης είναι admin ή οχι */
         df.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
             @Override
             public void onSuccess(DocumentSnapshot documentSnapshot) {
                 Log.d("TAG", "onSuccess: " + documentSnapshot.getData());
 
-                /** Checking user access level */
+                /** Ελέγχω το access level το χρήστη */
                 if(documentSnapshot.getString("isAdmin") != null) {
-                    /** When the user is admin */
+                    /** Όταν ο χρήστης είναι admin */
                     getActivity().startActivity(new Intent(getActivity().getApplicationContext(), Admin_Start_Activity.class));
                     getActivity().finish();
                 }
                 if(documentSnapshot.getString("isUser") != null) {
-                    /** When the user is not admin */
-                    getActivity().startActivity(new Intent(getActivity().getApplicationContext(), R6_Activity.class));
+                    /** Όταν είναι απλός χρήστης */
+                    getActivity().startActivity(new Intent(getActivity().getApplicationContext(), R7_Activity.class));
                     getActivity().finish();
                 }
 

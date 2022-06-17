@@ -49,6 +49,12 @@ public class R9_Activity<Team1> extends AppCompatActivity {
         } catch (Exception e) {
             e.printStackTrace();
         }
+        Button toR10Btn = findViewById(R.id.toR10Btn);
+        toR10Btn.setOnClickListener(v -> {
+            startActivity(new Intent(getApplicationContext(), R10_Activity.class));
+            finish();
+        });
+
         totalTeam = findViewById(R.id.Sunolo);
         totalTeam.setOnClickListener(v -> {
             int j = 0;

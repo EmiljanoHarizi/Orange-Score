@@ -23,7 +23,7 @@ public class R10_Activity extends AppCompatActivity {
     private final String myIP = "tim.alwaysdata.net";
 
     /** Κάνει Fetch απο την βάση δεδομένων */
-    private final String playerStatsURL = "https://"+myIP+"/fetchPlayers.php";
+    private final String playerStatsURL = "https://"+myIP+"/fetchPlayersSeason.php";
 
     /** Για να συμπληρώσω τα Table */
     private final int[][] player_list_stats = {

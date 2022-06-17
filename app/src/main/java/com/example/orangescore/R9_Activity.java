@@ -65,9 +65,9 @@ public class R9_Activity<Team1> extends AppCompatActivity {
             invisible_tables();
             int j = 0;
             for(int i=0; i < playersList.size(); i++){
-                if(playersList.get(i).player_team.equals("1")) {
-                    visible_tables(i);
+                if(playersList.get(i).player_team.equals("PAOK")) {
                     populate_tables(j,i);
+                    visible_tables(j);
                     j++;
                 }
             }
@@ -78,9 +78,9 @@ public class R9_Activity<Team1> extends AppCompatActivity {
             invisible_tables();
             int j = 0;
             for(int i=0; i < playersList.size(); i++){
-                if(playersList.get(i).player_team.equals("2")) {
-                    visible_tables(i);
+                if(playersList.get(i).player_team.equals("AEK")) {
                     populate_tables(j, i);
+                    visible_tables(j);
                     j++;
                 }
             }
@@ -100,6 +100,19 @@ public class R9_Activity<Team1> extends AppCompatActivity {
             ((TextView) findViewById(player_list_stats[i][2])).setText(Integer.toString(playersList.get(i).player_rebounds));
             ((TextView) findViewById(player_list_stats[i][3])).setText(Integer.toString(playersList.get(i).player_assists));
         }
+
+        String team1 = playersList.get(0).player_team;
+        ((TextView) findViewById(R.id.Team1Txt)).setText(team1);
+        ((TextView) findViewById(R.id.Team1)).setText(team1);
+        for(int i = 1; i < playersList.size(); i++){
+            if(!team1.equals(playersList.get(i).player_team)){
+                ((TextView) findViewById(R.id.Team2Txt)).setText(playersList.get(i).player_team);
+                ((TextView) findViewById(R.id.Team2)).setText(playersList.get(i).player_team);
+                break;
+            }
+        }
+
+
     }
 
     private void populate_tables(int j, int i){

@@ -13,6 +13,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
+import com.example.orangescore.databinding.R6ListBinding;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.AuthResult;
@@ -99,7 +100,7 @@ public class Login extends Fragment {
                 }
                 if(documentSnapshot.getString("isUser") != null) {
                     /** Όταν είναι απλός χρήστης */
-                    getActivity().startActivity(new Intent(getActivity().getApplicationContext(), R4_Activity.class));
+                    getActivity().startActivity(new Intent(getActivity().getApplicationContext(), R6_Activity.class));
                     getActivity().finish();
                 }
 

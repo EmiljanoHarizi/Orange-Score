@@ -31,6 +31,12 @@ public class R7_Activity extends AppCompatActivity {
     FirebaseFirestore fb;
      private FirestoreRecyclerAdapter adapter;
 
+    public void onBackPressed() {
+        super.onBackPressed();
+        startActivity(new Intent(R7_Activity.this, R6_Activity.class));
+        finish();
+    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

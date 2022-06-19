@@ -36,6 +36,13 @@ public class R9_Activity<Team1> extends AppCompatActivity {
     };
 
     private int[] tables = {R.id.tableRow17,R.id.tableRow16,R.id.tableRow18,R.id.tableRow19,R.id.tableRow20,R.id.tableRow22,R.id.tableRow21,R.id.tableRow24,R.id.tableRow23,R.id.tableRow25};
+
+    public void onBackPressed() {
+        super.onBackPressed();
+        startActivity(new Intent(R9_Activity.this, R8_Activity.class));
+        finish();
+    }
+
     @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {

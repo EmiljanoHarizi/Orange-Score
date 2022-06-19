@@ -16,6 +16,7 @@ import java.util.Comparator;
 public class R10_Activity extends AppCompatActivity {
     Button logout;
     ArrayList<PlayerStats> playersList = new ArrayList<>();
+
     /** Το IP ίσως θα χρειαστει αλλαγή για να ανοιξει, αναλόγως την IP του υπολογιστη */
     //private final String myIP = "192.168.1.6";
     //String playerStatsURL = "http://" + myIP + "/OrangeScore/fetchPlayers.php";
@@ -33,6 +34,13 @@ public class R10_Activity extends AppCompatActivity {
             {R.id.player4, R.id.playerPoints4, R.id.playerRebounds4, R.id.playerAssists4},
             {R.id.player5, R.id.playerPoints5, R.id.playerRebounds5, R.id.playerAssists5}
     };
+
+
+    public void onBackPressed() {
+        super.onBackPressed();
+        startActivity(new Intent(R10_Activity.this, R9_Activity.class));
+        finish();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -77,9 +77,7 @@ public class R1_Activity extends AppCompatActivity {
                 /** Getting a list both for selected players of the Home Team & selected players of Away Team,
                  * and showing the user which players are selected in short length toast*/
                 if (home_Adapter.getSelectedHomePlayers().size() > 0
-                        && home_Adapter.getSelectedHomePlayers().size() <5
-                        && away_Adapter.getSelectedAwayPlayers().size() > 0
-                        && away_Adapter.getSelectedAwayPlayers().size() <5) {
+                        && away_Adapter.getSelectedAwayPlayers().size() > 0) {
                     startActivity(new Intent(getApplicationContext(), R2_Activity.class));
                     finish();
                     StringBuilder homeStrBuilder = new StringBuilder();

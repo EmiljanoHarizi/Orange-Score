@@ -78,8 +78,10 @@ public class R1_Activity extends AppCompatActivity {
                  * and showing the user which players are selected in short length toast*/
                 if (home_Adapter.getSelectedHomePlayers().size() > 0
                         && away_Adapter.getSelectedAwayPlayers().size() > 0) {
+
                     startActivity(new Intent(getApplicationContext(), R2_Activity.class));
                     finish();
+
                     StringBuilder homeStrBuilder = new StringBuilder();
                     StringBuilder awayStrBuilder = new StringBuilder();
 

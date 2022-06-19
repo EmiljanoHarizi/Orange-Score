@@ -1,6 +1,8 @@
 package com.example.orangescore;
 
 import android.os.Bundle;
+import android.os.StrictMode;
+import android.util.Log;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -10,11 +12,38 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 public class R3_Activity extends AppCompatActivity {
+    private java.sql.Connection connnection;
+
+    class Connection extends R3_Activity {
+
+        String username, pass, ip, port, database;
+
+        public Connection connectionclass() {
+            ip = "mysql-tim.alwaysdata.net";
+            database = "tim_orangescore";
+            username = "tim";
+            pass = "Timtimtim1";
+            port = "3306";
+            StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+            StrictMode.setThreadPolicy(policy);
+            Connection connection = null;
+            String ConnectionURL = null;
+
+            try {
+                Class.forName("net.sourceforge.jtds.jdbc.Driver");
+                ConnectionURL = "jdbc:jtds:sqlserver://" + ip + ":" + port + ";" + "databasename=" + database + ";user=" + username + ";password=" + pass + ";";
+                connection = (Connection) DriverManager.getConnection(ConnectionURL);
+            } catch (Exception ex) {
+                Log.e("Error", ex.getMessage());
+            }
+            return connection;
+        }
+    }
 
     public void SelectDataMySQL() throws ClassNotFoundException, IllegalAccessException, InstantiationException, SQLException {
 
         //Connect to DATABASE
-        String url = "jdbc:mysql://192.168.1.7/tim_orangescore";
+        String url = "https://phpmyadmin.alwaysdata.com/phpmyadmin/index.php?route=/database/structure&db=tim_orangescore";
         String user = "tim";
         String password = "Timtimtim1";
 
@@ -22,8 +51,8 @@ public class R3_Activity extends AppCompatActivity {
         try {
             Class.forName("org.mariadb.jdbc.Driver");
 
-            Connection con = DriverManager.getConnection(url, user, password);
-            Statement st = con.createStatement();
+            // Connection con = DriverManager.getConnection(url, user, password);
+            Statement st = connnection.createStatement();
 
             //points
             String sqlpoints = ("UPDATE playerStatsGame INNER JOIN R2 ON playerStatsGame.pname = R2.Name SET playerStatsGame.points = playerStatsGame.points + IF(R2.Category='points',R2.Value,0)");
@@ -87,7 +116,7 @@ public class R3_Activity extends AppCompatActivity {
             st.addBatch(sqlFINAL);
 
             st.executeBatch();
-            con.commit();
+            connnection.commit();
         } catch (Exception e){
             System.out.println("ERROR: couldn't read Data from Database");
             e.printStackTrace();

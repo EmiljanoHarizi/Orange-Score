@@ -29,7 +29,7 @@ public class R7_Activity extends AppCompatActivity {
     Button r7tor8_btn;
     RecyclerView teamlist;
     FirebaseFirestore fb;
-     private FirestoreRecyclerAdapter adapter;
+    private FirestoreRecyclerAdapter adapter;
 
     public void onBackPressed() {
         super.onBackPressed();

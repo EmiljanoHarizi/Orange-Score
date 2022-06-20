@@ -38,7 +38,8 @@ public class R2_Activity extends AppCompatActivity {
                                    }
                                }
        );
-    }
 
+
+    }
 
 }

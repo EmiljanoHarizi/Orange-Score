@@ -31,6 +31,12 @@ public class Admin_Start_Activity extends AppCompatActivity {
 
     ProgressDialog progressDialog;
 
+    public void onBackPressed() {
+        super.onBackPressed();
+        startActivity(new Intent(Admin_Start_Activity.this, Login.class));
+        finish();
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -1,7 +1,9 @@
 package com.example.orangescore;
 
 import android.os.Bundle;
+import android.util.Log;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.sql.Connection;
@@ -11,10 +13,27 @@ import java.sql.Statement;
 
 public class R3_Activity extends AppCompatActivity {
 
+    @Override
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        try {
+            SelectDataMySQL();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        } catch (InstantiationException e) {
+            e.printStackTrace();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+    }
+
     public void SelectDataMySQL() throws ClassNotFoundException, IllegalAccessException, InstantiationException, SQLException {
 
         //Connect to DATABASE
-        String url = "jdbc:mysql://192.168.1.7/tim_orangescore";
+        String url = "jdbc:mariadb://192.168.1.7/tim_orangescore";
         String user = "tim";
         String password = "Timtimtim1";
 
@@ -88,9 +107,8 @@ public class R3_Activity extends AppCompatActivity {
 
             st.executeBatch();
             con.commit();
-        } catch (Exception e){
-            System.out.println("ERROR: couldn't read Data from Database");
-            e.printStackTrace();
+        } catch (Exception e) {
+            Log.e("InfoAsyncTask", "Error reading DATABASE", e);
         }
     }
 }
